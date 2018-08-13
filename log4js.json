@@ -1,0 +1,26 @@
+{
+  "appenders": {
+    "out": {
+      "type": "stdout",
+      "layout": {
+        "type": "pattern",
+        "pattern": "%[[%p]%]-(%c) %[%m%]"
+      }
+    },
+    "app": {
+      "type": "file",
+      "filename": "./logs/app.log",
+      "maxLogSize": 10485760,
+      "pattern": ".yyyy-MM-dd",
+      "compress": true,
+      "alwaysIncludePattern": true,
+      "layout": {
+        "type": "pattern",
+        "pattern": "%r-%p-[%h]{%c}- %m"
+      }
+    }
+  },
+  "categories": {
+    "default": { "appenders": ["out", "app"], "level": "debug" }
+  }
+}

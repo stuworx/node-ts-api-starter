@@ -1,0 +1,5 @@
+StandardResponse:
+    $ref: common.yaml#/standardResponse
+
+RegisterBody:
+    $ref: account.yaml#/registerBody

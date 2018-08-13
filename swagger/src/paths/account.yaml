@@ -1,0 +1,18 @@
+register:
+    post:
+      tags:
+        - "account"
+      summary: lets users register a user account. An email is sent to validate their account.
+      operationId: register
+      parameters:
+        - name: user
+          in: body
+          description: user object
+          required: true
+          schema:
+            $ref: "#/definitions/RegisterBody"
+      responses:
+        default:
+          description: Standard response
+          schema:
+            $ref: "#/definitions/StandardResponse"

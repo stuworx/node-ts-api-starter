@@ -1,0 +1,6 @@
+  /swagger:
+    x-swagger-pipe: swagger_raw
+
+  /register:
+    $ref: account.yaml#/register
+

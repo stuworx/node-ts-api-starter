@@ -1,0 +1,26 @@
+{
+  "prettier.arrowParens": "always",
+  "prettier.eslintIntegration": true,
+  "prettier.singleQuote": false,
+  "editor.rulers": [140],
+    "files.exclude": {
+    "node_modules": true,
+    "@types": true,
+    "logs": true,
+    "build": true
+  },
+  "search.exclude": {
+    "node_modules": true,
+    "build": true,
+    "@types": true,
+    "logs": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "typescript.format.enable": true,
+  "typescript.referencesCodeLens.enabled": false,
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": true,
+  "editor.minimap.maxColumn": 90,
+  "typescript.tsdk": "node_modules\\typescript\\lib",
+  "extensions.showRecommendationsOnlyOnDemand": true
+}

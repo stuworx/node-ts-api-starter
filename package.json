@@ -1,0 +1,47 @@
+{
+  "name": "node-api-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "jsonwebtoken": "8.3.0",
+    "lodash": "^4.17.10",
+    "log4js": "^3.0.4",
+    "mongoose": "^5.2.6",
+    "restify": "^7.2.1"
+  },
+  "devDependencies": {
+    "@types/jsonwebtoken": "7.2.8",
+    "@types/lodash": "^4.14.116",
+    "@types/mongoose": "5.2.5",
+    "@types/node": "^8.10.25",
+    "@types/restify": "7.2.3",
+    "@types/restify-cors-middleware": "^1.0.1",
+    "concurrently": "3.6.1",
+    "copyfiles": "2.0.0",
+    "dotenv": "6.0.0",
+    "js-yaml": "^3.12.0",
+    "json-refs": "3.0.8",
+    "nodemon": "1.18.3",
+    "rimraf": "2.6.2",
+    "swagger-parser": "^5.0.2",
+    "tslint": "5.11.0",
+    "typescript": "^3.0.1",
+    "wait-on": "2.1.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run tsc-watch\" \"npm run nodemon\"",
+    "build": "tsc",
+    "start": "node ./build/app.js",
+    "clean": "rimraf build",
+    "prebuild": "npm run clean && npm run copy-files",
+    "prestart": "npm run build",
+    "swagger": "node swagger-generate.js",
+    "predev": "npm run clean && npm run copy-files",
+    "copy-files": "copyfiles --flat dev.env build/ && copyfiles --flat log4js.json build/",
+    "prenodemon": "wait-on ./build/app.js",
+    "nodemon": "nodemon  -r dotenv/config --delay 1000ms --watch dev.env --watch ./build --inspect --inspect-port=1234  \"./build/app.js\" dotenv_config_path=dev.env",
+    "tsc-watch": "tsc -w",
+    "lint": "tslint -c tslint.json \"./src/**/*.ts\""
+  }
+}

@@ -1,0 +1,11 @@
+standardResponse:
+  required:
+    - success
+    - message
+  properties:
+    success:
+      type: boolean
+    message:
+      type: string
+    data:
+      type: object

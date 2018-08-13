@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "rootDir": "./src/",
+    "outDir": "./build/",
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "declaration": false,
+    "noImplicitAny": false,
+    "removeComments": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": false,
+    "inlineSources": true,
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*", "./@types/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./@types"]
+  },
+  "include": ["src/app.ts"],
+  "exclude": ["node_modules"]
+}

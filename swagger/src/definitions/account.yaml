@@ -1,0 +1,21 @@
+registerBody:
+  required:
+    - "firstName"
+    - "lastName"
+    - "email"
+    - "password"
+    - "isEnabled"
+    - "roleID"
+  properties:
+    firstName:
+      type: "string"
+    lastName:
+      type: "string"
+    email:
+      type: "string"
+    password:
+      type: "string"
+    isEnabled:
+      type: "boolean"
+    roleID:
+      type: "number"

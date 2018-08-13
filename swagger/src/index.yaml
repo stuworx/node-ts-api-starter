@@ -1,0 +1,26 @@
+swagger: "2.0"
+
+info:
+  $ref: ./swagger/src/info/index.yaml
+
+host: localhost:8080
+
+basePath: /
+
+schemes:
+  - http
+
+consumes:
+  - application/json
+
+produces:
+  - application/json
+
+tags:
+  $ref: ./swagger/src/info/tags.yaml
+
+paths:
+  $ref: ./swagger/src/paths/index.yaml
+
+definitions:
+  $ref: ./swagger/src/definitions/index.yaml
