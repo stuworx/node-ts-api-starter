@@ -4,7 +4,7 @@
   "prettier.singleQuote": false,
   "editor.rulers": [140],
     "files.exclude": {
-    "node_modules": true,
+    "node_modules": false,
     "@types": true,
     "logs": true,
     "build": true

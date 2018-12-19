@@ -7,7 +7,7 @@ export default class LoginController extends BaseController {
   }
   authUser = async (req: Request, res: Response, next: Next) => {
     try {
-      return res.send("hello there - " + req.params.name);
+      return res.send("hello there - " + (req.params.name ? req.params.name : ""));
     } catch (error) {
       this.ErrorResult(error, req, res, next);
     }
