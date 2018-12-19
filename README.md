@@ -1,13 +1,21 @@
 # API template.
-
+## Features
+- Live Reload
+- Typescript 3+
+- TSLint
+- Mongoose
+- Restify
+- Swagger Starter included
+- Code split into their own files for routes, logging included.
+- ES6+
 ## To begin development, you need
 - node 8+
 - `npm` (comes with node) or `yarn`
 
-## Downloading dependancies
+## Downloading dependencies
 - do `npm i` (or) `yarn` in the current directory
 
-## Beginning Developement
+## Beginning Development
 The project uses `typescript` coupled with `nodemon` therefore any changes to the code will restart the node process
 ```
 // npm users
