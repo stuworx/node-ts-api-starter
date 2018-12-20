@@ -2,6 +2,8 @@ require("dotenv").config();
 import { createServer, plugins } from "restify";
 import { logger } from "./policies/InitApp";
 import routeDefinition from "./routes";
+import corsMiddleware = require("restify-cors-middleware");
+
 logger.debug("✔ Logger initialised");
 
 let server = createServer();
@@ -9,6 +11,16 @@ server.use(plugins.dateParser());
 server.use(plugins.queryParser());
 server.use(plugins.bodyParser());
 // server.server.setTimeout(60000 * 0.5);
+
+const cors = corsMiddleware({
+  origins: ["*"],
+  allowHeaders: ["at"],
+  exposeHeaders: [],
+});
+
+server.pre(cors.preflight);
+server.use(cors.actual);
+
 server.pre((req, _, next) => {
   logger.debug(req.method, req.url, " => ", req.headers["host"]);
   next();
