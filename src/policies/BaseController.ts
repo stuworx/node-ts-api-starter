@@ -20,7 +20,7 @@ export default class BaseController {
   protected getUser(req: Request) {
     let user;
 
-    let token = req.headers["auth-token"] || req.params.token;
+    let token = req.headers["at"] || req.params.token;
 
     if (!token && req.body && req.body.token) {
       token = req.body.token; // check in req body
