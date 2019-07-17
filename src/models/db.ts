@@ -5,6 +5,8 @@ import * as dbtypes from "./dbtypes";
 
 const mongoPath = process.env.MONGO_PATH;
 set("debug", true);
+set("useCreateIndex", true);
+set("useFindAndModify", false);
 
 const connection = createConnection(mongoPath, { useNewUrlParser: true, config: { autoIndex: true } });
 
