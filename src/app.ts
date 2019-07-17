@@ -31,7 +31,7 @@ server.get("/", (_, res) => {
   res.writeHead(200, {
     "Content-Type": "text/html; charset=utf-8"
   });
-  res.write("<h1 style='font-family:monospace;text-align:center;font-size:72px'><br/><br/><br/>👍🏼<br/>API is Ready! </h1>");
+  res.write("<h1 style='font-family:monospace;text-align:center;font-size:72px'><br/><br/><br/>🚀<br/>API is Ready! </h1>");
   return res.end();
 });
 server.listen(process.env.PORT, function() {
