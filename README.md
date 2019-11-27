@@ -1,7 +1,7 @@
 # API template.
 ## Features
 - Live Reload
-- Typescript 3+
+- Typescript 3.7+
 - TSLint
 - Mongoose
 - Restify
@@ -9,7 +9,7 @@
 - Code split into their own files for routes, logging included.
 - ES6+
 ## To begin development, you need
-- node 8+
+- node 10+
 - `npm` (comes with node) or `yarn`
 
 ## Downloading dependencies
