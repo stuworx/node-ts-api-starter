@@ -1,8 +1,7 @@
 {
   "prettier.arrowParens": "always",
-  "prettier.eslintIntegration": true,
   "prettier.singleQuote": false,
-  "editor.rulers": [140],
+  "editor.rulers": [120],
     "files.exclude": {
     "node_modules": false,
     "@types": true,
