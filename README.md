@@ -2,14 +2,14 @@
 ## Features
 - Live Reload
 - Typescript 3.7+
-- TSLint
+- ESLint
 - Mongoose
 - Restify
 - Swagger Starter included
 - Code split into their own files for routes, logging included.
 - ES6+
 ## To begin development, you need
-- node 10+
+- node 12+
 - `npm` (comes with node) or `yarn`
 
 ## Downloading dependencies
@@ -35,7 +35,7 @@ npm run swagger // yarn swagger
 ```
 
 ## For config
-check the `dev.env` for environmental variables.
+check the `.env` for environmental variables.
 
 check the `log4js.json` for log config.
 
@@ -43,7 +43,7 @@ check the `swagger` directory for swagger documentation.
 
 check the `tsconfig.json` for typescript config.
 
-check the `tslint.json` for typescript linter config.
+check the `.eslintrc` for linter config.
 
 ### Recommended editor
 `vscode`
