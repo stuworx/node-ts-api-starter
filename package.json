@@ -3,46 +3,51 @@
   "version": "1.0.0",
   "main": "app.js",
   "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
   "dependencies": {
     "jsonwebtoken": "8.5.1",
     "lodash": "^4.17.15",
-    "log4js": "^6.1.0",
-    "mongoose": "^5.8.7",
+    "log4js": "^6.1.1",
+    "mongoose": "^5.8.11",
     "restify": "^8.5.1",
     "restify-cors-middleware": "1.1.1",
     "dotenv": "8.2.0"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "8.3.6",
+    "@types/jsonwebtoken": "8.3.7",
     "@types/lodash": "^4.14.149",
-    "@types/mongoose": "5.5.41",
-    "@types/node": "^12.12.24",
+    "@types/mongoose": "5.7.0",
+    "@types/node": "^12.12.26",
     "@types/restify": "8.4.2",
     "@types/restify-cors-middleware": "^1.0.1",
-    "concurrently": "5.0.2",
-    "copyfiles": "2.1.1",
+    "concurrently": "5.1.0",
+    "copyfiles": "2.2.0",
     "js-yaml": "^3.13.1",
     "json-refs": "3.0.13",
     "nodemon": "2.0.2",
-    "rimraf": "3.0.0",
+    "rimraf": "3.0.1",
     "swagger-parser": "^8.0.4",
-    "tslint": "5.20.1",
-    "typescript": "^3.7.4",
-    "wait-on": "3.3.0"
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.7.5",
+    "wait-on": "4.0.0"
   },
   "scripts": {
-    "dev": "concurrently \"npm run tsc-watch\" \"npm run nodemon\"",
+    "swagger": "node swagger-generate.js",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Node\" -c \"cyan.bold,green.bold\" \"npm run tsc-watch\" \"npm run nodemon\"",
     "build": "tsc",
     "start": "node ./build/app.js",
     "clean": "rimraf build",
     "prebuild": "npm run clean && npm run copy-files",
     "prestart": "npm run build",
-    "swagger": "node swagger-generate.js",
     "predev": "npm run clean && npm run copy-files",
-    "copy-files": "copyfiles --flat .env build/ && copyfiles --flat log4js.json build/",
+    "copy-files": "copyfiles --flat .env build/ && copyfiles --flat log4js.json build/ && copyfiles -u 1 src/**/*.pug build && copyfiles --flat src/files/* build/files",
     "prenodemon": "wait-on ./build/app.js",
     "nodemon": "nodemon  -r dotenv/config --delay 1000ms --watch .env --watch ./build --inspect --inspect-port=1234  \"./build/app.js\" dotenv_config_path=.env",
     "tsc-watch": "tsc -w",
-    "lint": "tslint -c tslint.json \"./src/**/*.ts\""
+    "lint": "eslint . --ext .ts"
   }
 }
