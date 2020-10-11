@@ -10,7 +10,7 @@
     "removeComments": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "emitDecoratorMetadata": false,
+    "emitDecoratorMetadata": true,
     "inlineSources": true,
     "baseUrl": ".",
     "lib": ["es2020"],
