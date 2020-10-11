@@ -1,10 +1,10 @@
 import jwt = require("jsonwebtoken");
 import { Request, Response, Next } from "restify";
 import _ = require("lodash");
-import { logger } from "./InitApp";
+import { logger } from "./init_app";
 
 export function IsAuthenticated(req: Request, res: Response, next: Next): any {
-  let token = req.headers["at"] || req.params.at;
+  const token = req.headers["at"] || req.params.at;
   try {
     // check header or url parameters or post parameters for token
 

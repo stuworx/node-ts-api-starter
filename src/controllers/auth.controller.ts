@@ -1,11 +1,11 @@
-import BaseController from "../policies/BaseController";
+import BaseController from "../policies/base_controller";
 import { Request, Response, Next } from "restify";
 
 export default class LoginController extends BaseController {
   constructor() {
     super();
   }
-  authUser = async (req: Request, res: Response, next: Next) => {
+  authUser = async (req: Request, res: Response, next: Next): Promise<any> => {
     try {
       return res.send("hello there - " + (req.params.name ? req.params.name : ""));
     } catch (error) {

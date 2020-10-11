@@ -1,6 +1,6 @@
 import { Server } from "restify";
 import AuthController from "../controllers/auth.controller";
-import { IsAuthenticated } from "../policies/Authorizer";
+import { IsAuthenticated } from "../policies/authorizer";
 export default function routeDefinition(server: Server) {
   const auth = new AuthController();
   server.get("/hello", auth.authUser);

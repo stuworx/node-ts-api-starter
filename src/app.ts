@@ -1,7 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 require("dotenv").config();
 import { createServer, plugins } from "restify";
-import { logger } from "./policies/InitApp";
+import { logger } from "./policies/init_app";
 import routeDefinition from "./routes";
 import corsMiddleware = require("restify-cors-middleware");
 

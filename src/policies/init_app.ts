@@ -1,8 +1,9 @@
 import { configure, getLogger } from "log4js";
-export let logger = setupLogConfig();
+export const logger = setupLogConfig();
 
 function createLogsDir() {
   try {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     require("fs").mkdirSync("./logs");
   } catch (e) {
     if (e.code !== "EEXIST") {

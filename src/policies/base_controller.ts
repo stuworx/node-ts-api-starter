@@ -41,7 +41,7 @@ export default class BaseController {
    * @param  {Next} restify next handler
    * (description) sends the error response.
    */
-  protected ErrorResult = (error: any, req: Request, res: Response, next: Next) => {
+  protected ErrorResult = (error: any, req: Request, res: Response, next: Next): void => {
     let finalMessage: string;
     if (error.errors !== undefined && error.errors.length > 0) {
       error.errors.map((x) => this.log.error(x));
@@ -51,13 +51,13 @@ export default class BaseController {
     } else {
       finalMessage = error.name + " " + error.message;
     }
-    let response = {
+    const response = {
       success: false,
-      message: finalMessage
+      message: finalMessage,
     };
 
     this.log.error(finalMessage);
     res.send(500, response);
     return next();
-  }
+  };
 }
