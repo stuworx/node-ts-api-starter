@@ -8,7 +8,7 @@ set("debug", true);
 set("useCreateIndex", true);
 set("useFindAndModify", false);
 
-const connection = createConnection(mongoPath, { useNewUrlParser: true, config: { autoIndex: true } });
+const connection = createConnection(mongoPath, { useNewUrlParser: true, autoIndex: true });
 
 export const db = {
   customers: connection.model<dbtypes.ICustomers>("customers", SCHEMAS.customerSchema),

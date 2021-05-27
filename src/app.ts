@@ -3,7 +3,7 @@ require("dotenv").config();
 import { createServer, plugins } from "restify";
 import { logger } from "./policies/init_app";
 import routeDefinition from "./routes";
-import corsMiddleware = require("restify-cors-middleware");
+import corsMiddleware = require("restify-cors-middleware2");
 
 logger.debug("✔ Logger initialized");
 
@@ -30,12 +30,12 @@ server.pre((req, _, next) => {
 routeDefinition(server);
 server.get("/", (_, res) => {
   res.writeHead(200, {
-    "Content-Type": "text/html; charset=utf-8"
+    "Content-Type": "text/html; charset=utf-8",
   });
   res.write("<h1 style='font-family:monospace;text-align:center;font-size:72px'><br/><br/><br/>🚀<br/>API is Ready! </h1>");
   return res.end();
 });
-server.listen(process.env.PORT, function() {
+server.listen(process.env.PORT, function () {
   logger.info("=---------------------------------------------------=");
   logger.info("env -> ", process.env.NODE_CONFIG_ENV);
   logger.info("=---------------------------------------------------=");
